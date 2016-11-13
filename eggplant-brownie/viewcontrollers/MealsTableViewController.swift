@@ -1,6 +1,6 @@
 import UIKit
 
-class MealsTableViewController:UITableViewController {
+class MealsTableViewController:UITableViewController, AddAMealDeledate {
     
     var meals = [Meal(name:"Hamburger", happiness: 5),
                  Meal(name:"Pizza", happiness: 4),
@@ -9,7 +9,7 @@ class MealsTableViewController:UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addMeal"){
             let view = segue.destination as! ViewController
-            view.mealsTable = self
+            view.delegate = self
         }
     }
     

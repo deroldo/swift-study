@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8639E1481DD912D6003C63A9 /* AddAMealDeledate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8639E1471DD912D6003C63A9 /* AddAMealDeledate.swift */; };
 		86A5362D1DD8C31200637B24 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A5362C1DD8C31200637B24 /* Meal.swift */; };
 		86A5362F1DD8C38000637B24 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A5362E1DD8C38000637B24 /* Item.swift */; };
 		86A536311DD8C4C400637B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A536301DD8C4C400637B24 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8639E1471DD912D6003C63A9 /* AddAMealDeledate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAMealDeledate.swift; sourceTree = "<group>"; };
 		86A5362C1DD8C31200637B24 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		86A5362E1DD8C38000637B24 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		86A536301DD8C4C400637B24 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		86A536291DD8C2DB00637B24 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				8639E1471DD912D6003C63A9 /* AddAMealDeledate.swift */,
 				86A5362C1DD8C31200637B24 /* Meal.swift */,
 				86A5362E1DD8C38000637B24 /* Item.swift */,
 			);
@@ -294,6 +297,7 @@
 			files = (
 				86A536351DD8CC4300637B24 /* MealsTableViewController.swift in Sources */,
 				86A5362F1DD8C38000637B24 /* Item.swift in Sources */,
+				8639E1481DD912D6003C63A9 /* AddAMealDeledate.swift in Sources */,
 				86A5362D1DD8C31200637B24 /* Meal.swift in Sources */,
 				86A536311DD8C4C400637B24 /* ViewController.swift in Sources */,
 				86D0F6FB1DD7393D00F449E4 /* AppDelegate.swift in Sources */,
