@@ -27,7 +27,19 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
         let meal = meals[row]
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
         cell.textLabel!.text = meal.name
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MealsTableViewController.showDatails))
+        cell.addGestureRecognizer(longPressRecognizer)
         return cell
+    }
+    
+    func showDatails(recognizer: UILongPressGestureRecognizer){
+        if (recognizer.state == UIGestureRecognizerState.began){
+            let cell = recognizer.view as! UITableViewCell
+            if let indexPath = tableView.indexPath(for: cell) {
+                let meal = meals[indexPath.row]
+                Alert(controller:self).show(title: meal.name, message: meal.details())
+            }
+        }
     }
     
 }
