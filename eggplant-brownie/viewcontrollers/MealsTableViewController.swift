@@ -37,7 +37,11 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
             let cell = recognizer.view as! UITableViewCell
             if let indexPath = tableView.indexPath(for: cell) {
                 let meal = meals[indexPath.row]
-                Alert(controller:self).show(title: meal.name, message: meal.details())
+                Alert(controller:self).action(title: meal.name, message: meal.details(), buttonLabel: "Remove",
+                                              style: UIAlertActionStyle.destructive, handler: { action in
+                                                self.meals.remove(at: indexPath.row)
+                                                self.tableView.reloadData()
+                })
             }
         }
     }

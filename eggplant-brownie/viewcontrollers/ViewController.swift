@@ -29,20 +29,28 @@ class ViewController:UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     @IBAction func add(){
-        if (nameField == nil
-            || happinnessField == nil
-            || delegate == nil){
-            return
+        if let meal = getMealFromForm() {
+            delegate?.add(meal)
+            navigationController!.popViewController(animated: true)
+        } else {
+            Alert(controller: self).show(title: "Ops!", message: "Todos os campos são obrigatórios")
         }
-        
-        let name:String = nameField!.text!
-        if let happiness = Int(happinnessField!.text!) {
-            let meal = Meal(name: name, happiness: happiness, items: selected)
-            delegate!.add(meal)
-            if let navigation = navigationController {
-                navigation.popViewController(animated: true)
+    }
+    
+    func convertToInt(_ text:String?) -> Int? {
+        if let number = text {
+            return Int(number)
+        }
+        return nil
+    }
+    
+    func getMealFromForm() -> Meal?{
+        if let name = nameField?.text {
+            if let happiness = convertToInt(happinnessField?.text){
+                return Meal(name: name, happiness: happiness, items: selected)
             }
         }
+        return nil
     }
     
     func add(_ item: Item) {
