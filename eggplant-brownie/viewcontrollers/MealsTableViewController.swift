@@ -30,10 +30,10 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomMealCell", for: indexPath) as! CustomMealCell
         let row = indexPath.row
         let meal = meals[row]
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
-        cell.textLabel!.text = meal.name
+        cell.configure(meal)
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MealsTableViewController.showDatails))
         cell.addGestureRecognizer(longPressRecognizer)
         return cell
@@ -44,14 +44,18 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
             let cell = recognizer.view as! UITableViewCell
             if let indexPath = tableView.indexPath(for: cell) {
                 let meal = meals[indexPath.row]
-                Alert(controller:self).action(title: meal.name, message: meal.details(), buttonLabel: "Remove",
-                                              style: UIAlertActionStyle.destructive, handler: { action in
-                                                self.meals.remove(at: indexPath.row)
-                                                SaveAsFileUtil().save(self.meals, archiveName:"meals.data")
-                                                self.tableView.reloadData()
-                })
+                showDetails(meal: meal, row: indexPath.row)
             }
         }
+    }
+    
+    func showDetails(meal:Meal, row:Int){
+        Alert(controller:self).action(title: meal.name, message: meal.details(), buttonLabel: "Remove",
+                                      style: UIAlertActionStyle.destructive, handler: { action in
+                                        self.meals.remove(at: row)
+                                        SaveAsFileUtil().save(self.meals, archiveName:"meals.data")
+                                        self.tableView.reloadData()
+        })
     }
     
 }

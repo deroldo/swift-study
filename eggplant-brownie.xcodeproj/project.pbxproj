@@ -18,6 +18,7 @@
 		86A536311DD8C4C400637B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A536301DD8C4C400637B24 /* ViewController.swift */; };
 		86A536331DD8C54F00637B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A536321DD8C54F00637B24 /* Main.storyboard */; };
 		86A536351DD8CC4300637B24 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A536341DD8CC4300637B24 /* MealsTableViewController.swift */; };
+		86BC696E1DDBA5EA00F0922D /* CustomMealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BC696D1DDBA5EA00F0922D /* CustomMealCell.swift */; };
 		86D0F6FB1DD7393D00F449E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0F6FA1DD7393D00F449E4 /* AppDelegate.swift */; };
 		86D0F7021DD7393D00F449E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D0F7011DD7393D00F449E4 /* Assets.xcassets */; };
 		86D0F7051DD7393D00F449E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D0F7031DD7393D00F449E4 /* LaunchScreen.storyboard */; };
@@ -54,6 +55,7 @@
 		86A536301DD8C4C400637B24 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86A536321DD8C54F00637B24 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		86A536341DD8CC4300637B24 /* MealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		86BC696D1DDBA5EA00F0922D /* CustomMealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMealCell.swift; sourceTree = "<group>"; };
 		86D0F6F71DD7393D00F449E4 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D0F6FA1DD7393D00F449E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86D0F7011DD7393D00F449E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				86A536301DD8C4C400637B24 /* ViewController.swift */,
 				8699E57B1DDA620B00FC8784 /* NewItemViewController.swift */,
 				86A536341DD8CC4300637B24 /* MealsTableViewController.swift */,
+				86BC696D1DDBA5EA00F0922D /* CustomMealCell.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				8699E57E1DDA63CF00FC8784 /* AddAnItemDelegate.swift in Sources */,
 				8699E5831DDABF5000FC8784 /* SaveAsFileUtil.swift in Sources */,
 				86A536311DD8C4C400637B24 /* ViewController.swift in Sources */,
+				86BC696E1DDBA5EA00F0922D /* CustomMealCell.swift in Sources */,
 				86D0F6FB1DD7393D00F449E4 /* AppDelegate.swift in Sources */,
 				8699E57C1DDA620B00FC8784 /* NewItemViewController.swift in Sources */,
 			);
