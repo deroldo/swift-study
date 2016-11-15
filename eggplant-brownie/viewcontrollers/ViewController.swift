@@ -9,13 +9,7 @@ class ViewController:UIViewController, UITableViewDataSource, UITableViewDelegat
     
     let archiveName = "items.data"
     
-    var items = [Item(name: "Carne", calories: 100),
-                 Item(name: "Pão", calories: 75),
-                 Item(name: "Queijo", calories: 110),
-                 Item(name: "Alface", calories: 10),
-                 Item(name: "Tomate", calories: 15),
-                 Item(name: "Molho", calories: 145)]
-    
+    var items = Array<Item>()
     var selected = Array<Item>()
     
     override func viewDidLoad() {

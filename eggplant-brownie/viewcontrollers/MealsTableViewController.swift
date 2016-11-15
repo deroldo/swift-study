@@ -2,9 +2,7 @@ import UIKit
 
 class MealsTableViewController:UITableViewController, AddAMealDeledate {
     
-    var meals = [Meal(name:"Hamburger", happiness: 5),
-                 Meal(name:"Pizza", happiness: 4),
-                 Meal(name:"Salada", happiness: 1)]
+    var meals = Array<Meal>()
     
     let archiveName = "meals.data"
     
