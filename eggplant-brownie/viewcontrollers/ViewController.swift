@@ -7,6 +7,8 @@ class ViewController:UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet var tableView: UITableView!
     var delegate:AddAMealDeledate?
     
+    let archiveName = "items.data"
+    
     var items = [Item(name: "Carne", calories: 100),
                  Item(name: "Pão", calories: 75),
                  Item(name: "Queijo", calories: 110),
@@ -19,6 +21,9 @@ class ViewController:UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewDidLoad() {
         let newItemButton = UIBarButtonItem(title: "New Item", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.showNewItem))
         navigationItem.rightBarButtonItem = newItemButton
+        if let savedItems = SaveAsFileUtil().read(archiveName: archiveName) {
+            self.items = savedItems as! Array<Item>
+        }
     }
     
     func showNewItem(){
@@ -55,6 +60,7 @@ class ViewController:UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func add(_ item: Item) {
         items.append(item)
+        SaveAsFileUtil().save(items, archiveName: archiveName)
         if let table = tableView {
             table.reloadData()
         }

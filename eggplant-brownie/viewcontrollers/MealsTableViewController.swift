@@ -6,8 +6,10 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
                  Meal(name:"Pizza", happiness: 4),
                  Meal(name:"Salada", happiness: 1)]
     
+    let archiveName = "meals.data"
+    
     override func viewDidLoad() {
-        if let savedMeals = SaveAsFileUtil().read(archiveName: "meals.data") {
+        if let savedMeals = SaveAsFileUtil().read(archiveName: self.archiveName) {
             self.meals = savedMeals as! Array<Meal>
         }
     }
@@ -21,7 +23,7 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
     
     func add(_ meal:Meal){
         self.meals.append(meal)
-        SaveAsFileUtil().save(self.meals, archiveName:"meals.data")
+        SaveAsFileUtil().save(self.meals, archiveName: self.archiveName)
         self.tableView.reloadData()
     }
     
