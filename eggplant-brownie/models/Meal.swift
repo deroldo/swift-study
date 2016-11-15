@@ -1,6 +1,6 @@
 import Foundation
 
-class Meal {
+class Meal: NSObject, NSCoding{
     
     let name:String
     let happiness:Int
@@ -18,6 +18,12 @@ class Meal {
         self.items = items
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObject(forKey: "name") as! String
+        self.happiness = aDecoder.decodeInteger(forKey: "happiness")
+        self.items = aDecoder.decodeObject(forKey: "items") as! Array<Item>
+    }
+    
     func allCalories() -> Double {
         var total = 0.0
         for item in items {
@@ -32,6 +38,12 @@ class Meal {
             message += "\n\(item.name) - calories: \(item.calories)"
         }
         return message
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.name, forKey: "name")
+        aCoder.encode(self.happiness, forKey: "happiness")
+        aCoder.encode(self.items, forKey: "items")
     }
     
 }

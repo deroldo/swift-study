@@ -6,6 +6,12 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
                  Meal(name:"Pizza", happiness: 4),
                  Meal(name:"Salada", happiness: 1)]
     
+    override func viewDidLoad() {
+        if let savedMeals = SaveAsFileUtil().read(archiveName: "meals.data") {
+            self.meals = savedMeals as! Array<Meal>
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addMeal"){
             let view = segue.destination as! ViewController
@@ -15,6 +21,7 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
     
     func add(_ meal:Meal){
         self.meals.append(meal)
+        SaveAsFileUtil().save(self.meals, archiveName:"meals.data")
         self.tableView.reloadData()
     }
     
@@ -40,6 +47,7 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
                 Alert(controller:self).action(title: meal.name, message: meal.details(), buttonLabel: "Remove",
                                               style: UIAlertActionStyle.destructive, handler: { action in
                                                 self.meals.remove(at: indexPath.row)
+                                                SaveAsFileUtil().save(self.meals, archiveName:"meals.data")
                                                 self.tableView.reloadData()
                 })
             }
