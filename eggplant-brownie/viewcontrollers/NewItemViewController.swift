@@ -27,6 +27,7 @@ class NewItemViewController: UIViewController {
         let calories = Double(caloriesField!.text!)
         
         if (name == nil || calories == nil){
+            Alert(controller: self).show(title: "Ops!", message: "Todos os campos são obrigatórios")
             return
         }
         

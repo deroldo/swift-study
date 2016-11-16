@@ -82,7 +82,7 @@
                                         <constraint firstItem="6Dw-df-4Ub" firstAttribute="top" secondItem="xnM-wD-O3j" secondAttribute="top" constant="8" id="Qre-YY-kFC"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.94880468075345425" green="0.95879209844559588" blue="0.95879209844559588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="cardView" destination="6Dw-df-4Ub" id="ISD-yJ-6nA"/>
                                     <outlet property="detailsButton" destination="hRY-as-r4X" id="AeN-r5-dyj"/>
