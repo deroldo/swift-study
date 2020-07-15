@@ -39,7 +39,7 @@ class MealsTableViewController:UITableViewController, AddAMealDeledate {
         return cell
     }
     
-    func showDatails(recognizer: UILongPressGestureRecognizer){
+    @objc func showDatails(recognizer: UILongPressGestureRecognizer){
         if (recognizer.state == UIGestureRecognizerState.began){
             let cell = recognizer.view as! UITableViewCell
             if let indexPath = tableView.indexPath(for: cell) {

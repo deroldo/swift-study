@@ -20,7 +20,7 @@ class ViewController:UIViewController, UITableViewDataSource, UITableViewDelegat
         }
     }
     
-    func showNewItem(){
+    @objc func showNewItem(){
         let newItem = NewItemViewController(delegate: self)
         if let navigation = navigationController {
           navigation.pushViewController(newItem, animated: true)
